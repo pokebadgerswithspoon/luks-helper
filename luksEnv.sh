@@ -11,10 +11,11 @@ TYPE=${TYPE:-"mapper"}
 if [ "x$1" != "xrun" ]; then
    echo "Usage: $0 run|test"
    if [ "x$1" = "xtest" ]; then
-     echo " LOOP_DEV=$LOOP_DEV"
-     echo " FILE=$FILE"
-     echo " MOUNT=$MOUNT"
-     echo " SECRETFS=$SECRETFS"
+     echo " LOOP_DEV= $LOOP_DEV"
+     echo " FILE= $FILE"
+     echo " MOUNT= $MOUNT"
+     echo " SECRETFS= $SECRETFS"
+     echo " TYPE= $TYPE"
    fi
    exit
 fi
