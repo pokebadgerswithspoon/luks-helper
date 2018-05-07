@@ -6,7 +6,7 @@ FILE=${FILE:-/var/local/$NAME.secretfs}
 SIZE_GB=${SIZE_GB:-25}
 MOUNT=${MOUNT:-/mnt/$NAME}
 SECRETFS=${SECRETFS:-secretfs$LOOP}
-TYPE=${TYPE-:"mapper"}
+TYPE=${TYPE:-"mapper"}
 
 if [ "x$1" != "xrun" ]; then
    echo "Usage: $0 run|test"
