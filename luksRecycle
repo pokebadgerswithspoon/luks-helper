@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# source ./luksEnv
+. ./luksEnv
+
+
+cryptsetup remove "$SECRETFS"
+cryptsetup create "$SECRETFS" "$LOOP_DEV"
