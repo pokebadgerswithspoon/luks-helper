@@ -1,0 +1,26 @@
+#!/bin/sh
+LOOP=${LOOP:-0}
+LOOP_DEV=${LOOP_DEV:-/dev/loop$LOOP}
+NAME=${NAME:-$(uname -n)}
+FILE=${FILE:-/var/local/$NAME.secretfs}
+SIZE_GB=${SIZE_GB:-25}
+MOUNT=${MOUNT:-/mnt/$NAME}
+SECRETFS=${SECRETFS:-secretfs$LOOP}
+TYPE=${TYPE:-"mapper"}
+
+echo_env() {
+    printf " LOOP_DEV=\t%s\n" "$LOOP_DEV"
+    printf " FILE=\t%s\n" "$FILE"
+    printf " MOUNT=\t%s\n" "$MOUNT"
+    printf " SECRETFS=\t%s\n" "$SECRETFS"
+    printf " TYPE=\t%s\n" "$TYPE"    
+}
+
+if [ "x$1" != "xrun" ]; then
+    echo "Usage: $0 run|test"
+    if [ "$1" = "test" ]; then
+        echo_env
+    fi
+    exit
+fi
+

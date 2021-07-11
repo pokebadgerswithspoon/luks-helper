@@ -8,6 +8,10 @@ Helper scripts to mount and unmount luks secret file
 * cryptsetup
 * tune2fs
 
+### Development
+
+Install shellcheck: https://github.com/koalaman/shellcheck#installing
+she
 ## Setup
 
 Check *luksEnv.sh* for env variables in use. There are two ways to configure scripts.
