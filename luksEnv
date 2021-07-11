@@ -17,10 +17,29 @@ echo_env() {
     printf " SIZE_GB=\t%s\n" "$SIZE_GB"
 }
 
+check_command() {
+    COMMAND=$1
+    if ! command -v "$COMMAND" > /dev/null 2>&1
+    then
+        echo "Command $COMMAND could not be found, make sure it is installed"
+        exit
+    fi
+}
+
+check_commands() {
+    check_command dd
+    check_command chmod
+    check_command losetup    
+    check_command cryptsetup    
+    check_command mke2fs    
+    check_command tune2fs    
+}
+
 if [ "x$1" != "xrun" ]; then
     echo "Usage: $0 run|test"
     if [ "$1" = "test" ]; then
         echo_env
+        check_commands
     fi
     exit
 fi

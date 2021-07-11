@@ -38,7 +38,10 @@ cryptsetup status "$SECRETFS"
 # world, making it nearly impossible to track down encrypted
 # data blocks if someone gains access to the file that holds
 # the encrypted filesystem.
+printf "Filling with zeros..."
 dd if=/dev/zero of=/dev/mapper/"$SECRETFS"
+printf "done\n"
+
 # Create a filesystem and verify its status
 mke2fs -j -O dir_index /dev/mapper/"$SECRETFS"
 tune2fs -l /dev/mapper/"$SECRETFS"
