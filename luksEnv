@@ -4,8 +4,8 @@ LOOP_DEV=${LOOP_DEV:-/dev/loop$LOOP}
 NAME=${NAME:-$(uname -n)}
 FILE=${FILE:-/var/local/$NAME.secretfs}
 SIZE_GB=${SIZE_GB:-25}
-MOUNT=${MOUNT:-/mnt/$NAME}
 SECRETFS=${SECRETFS:-secretfs$LOOP}
+MOUNT=${MOUNT:-/mnt/$SECRETFS}
 TYPE=${TYPE:-"mapper"}
 
 echo_env() {

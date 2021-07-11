@@ -38,7 +38,7 @@ cryptsetup status "$SECRETFS"
 # world, making it nearly impossible to track down encrypted
 # data blocks if someone gains access to the file that holds
 # the encrypted filesystem.
-printf "Filling with zeros..."
+printf "Filling with zeros, may take a long time..."
 dd if=/dev/zero of=/dev/mapper/"$SECRETFS"
 printf "done\n"
 
