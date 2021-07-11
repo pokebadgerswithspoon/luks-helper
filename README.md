@@ -1,5 +1,7 @@
 # luks-helper
-Helper scripts to mount and unmount luks secret file
+
+Helper scripts to mount and unmount luks secret file. 
+Make mountable encrypted volume with [luks](https://gitlab.com/cryptsetup/cryptsetup/blob/master/README.md).
 
 ## Dependencies
 
@@ -8,23 +10,27 @@ Helper scripts to mount and unmount luks secret file
 * cryptsetup
 * tune2fs
 
-### Development
+# Usage
+
+`luksEnv` - setup
+
+Here are env variables to use.
+There are two ways to configure scripts:
+- tweak the `luksEnv` itself
+- export vars within `luksEnv`
+
+`luksCreate` - create your secret file
+
+`luksMount` - mount your secret file
+
+`luksUmount` - unmount it
+
+
+# Development
 
 Install shellcheck: https://github.com/koalaman/shellcheck#installing
-she
-## Setup
 
-Check *luksEnv.sh* for env variables in use. There are two ways to configure scripts.
+# Kudos
 
-* tweak your luksEnv.sh directrly
-* put your tweaks in a separate file and invoke it infornt on *luksEnv.sh*
-
-## Usage
-
-./luksMount.sh - will mount your secret file
-./luksUmount.sh - will unmount it
-./luksCreate.sh - use it once to create your secret file
-
-## Kudos
-
-https://wiki.centos.org/HowTos/EncryptedFilesystem
+- https://wiki.centos.org/HowTos/EncryptedFilesystem
+- https://gitlab.com/cryptsetup/cryptsetup/blob/master/README.md
