@@ -13,7 +13,8 @@ echo_env() {
     printf " FILE=\t%s\n" "$FILE"
     printf " MOUNT=\t%s\n" "$MOUNT"
     printf " SECRETFS=\t%s\n" "$SECRETFS"
-    printf " TYPE=\t%s\n" "$TYPE"    
+    printf " TYPE=\t%s\n" "$TYPE"
+    printf " SIZE_GB=\t%s\n" "$SIZE_GB"
 }
 
 if [ "x$1" != "xrun" ]; then
